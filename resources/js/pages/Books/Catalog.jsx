@@ -5,7 +5,10 @@ export default function Books({books}){
         <div className="catalog-page">
             <div className="catalog-head">
             <h1>Каталог книг</h1>
+            <div className="btn-catalog">
             <a href={`/cart`}>Корзина</a>
+            <a href={`/logout`}>Выйти из личного кабинета</a>
+            </div>
             </div>
             <div className="catalog">
                 {books.map((book) => (

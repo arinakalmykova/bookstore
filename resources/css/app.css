@@ -162,7 +162,11 @@ h3{
     flex-direction: column;
     gap: 30px;
 }
-
+.btn-catalog{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
 .btn-cart{
     margin-left: auto;
     display: flex;

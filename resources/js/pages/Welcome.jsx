@@ -23,8 +23,8 @@ export default function Welcome({ auth}) {
                             <nav className="navigation">
                                 {auth.user ? (
                                     <Link
-                                        href={route('catalog')} 
-                                    >
+                                        href={route('catalog')} className="btn-primary"
+                                    > Личный кабинет
                                     </Link>
                                 ) : (
                                     <>

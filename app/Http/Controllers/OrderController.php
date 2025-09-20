@@ -9,6 +9,7 @@ use App\Models\Cart_items;
 use App\Models\Order_items;
 use App\Models\User;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
        public function selected(Request $request){
@@ -17,7 +18,7 @@ class OrderController extends Controller
           return redirect('cart')->with('error','Вы не выбрали ни одной книги!');
         }
 
-        $order = Order::create([ 'user_id' => '1','total_price' => 0, 'status' => 'создан']);
+        $order = Order::create([ 'user_id' => Auth::id(),'total_price' => 0, 'status' => 'создан']);
         $total_price = 0;
         foreach($selected as $select){
           $book=Book::find($select);

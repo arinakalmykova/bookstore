@@ -26,7 +26,7 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 
 // Выход
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
-
+Route::get('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 Route::get('/books',[BookController::class,'catalog'])->middleware(['auth', 'verified'])->name('catalog');
 Route::get('/books/{id}',[BookController::class,'detail'])->middleware(['auth', 'verified']);
 Route::post('/cart/add/{id}',[CartController::class,'add'])->middleware(['auth', 'verified']);
